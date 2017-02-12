@@ -24,6 +24,8 @@ var navbar = document.getElementById("navbar");
 // Fullscreen or Circle view setting
 var fullscreenView = false;
 
+var isPlaying = true;
+
 var titleView = {
     duration: 100,
     active: 0
@@ -77,14 +79,15 @@ function initializeR() {
     initialR = (fullscreenView) ? sqrt(pow(height, 2) + pow(width, 2)) : (min(height, width) / 2) - padding;
 }
 
-// pause drawing animation
-function pause() {
-    noLoop();
-}
-
-// play drawing animation
-function play() {
-    loop();
+function togglePlayPause() {
+    if (isPlaying) {
+        noLoop();
+    } else {
+        loop();
+    }
+    isPlaying = !isPlaying;
+    var playPauseIcon = document.getElementById('playPauseIcon');
+    playPauseIcon.innerHTML = (isPlaying) ? "pause" : "play_arrow";
 }
 
 function switchView() {
