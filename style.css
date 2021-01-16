@@ -17,6 +17,10 @@ canvas {
     z-index: -1;
 }
 
+nav .nav-wrapper {
+    background-image: linear-gradient(to right, #00000090, transparent);
+}
+
 #navbar {
     transition: margin-top 0.5s;
 }
